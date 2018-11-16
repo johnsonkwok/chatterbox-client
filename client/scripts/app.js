@@ -13,22 +13,15 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    Parse.create('aaaaaaaaaaaaaaaaa');
   },
 
   fetch: function(
-    callback = data => {
-      console.log('test');
-      $(".chats").append(`<p> test </p>`);
-    }
+    callback = () => {}
   ) {
     Parse.readAll(data => {
       // examine the response from the server request:
-      console.log(data.results);
-      for (const item of data.results) {
-        $("#chats").append(`<p><b>${item.username}</b> ${item.text} ${item.createdAt} </p>`);
-      }
-      callback(data);
+      console.log(data);
+      callback();
     });
   },
 

@@ -1,11 +1,13 @@
 var MessagesView = {
+  $chats: $("#chats"),
 
-  $chats: $('#chats'),
+  initialize: function() {},
 
-  initialize: function() {
-  },
-
-  render: function() {
+  render: function() {},
+  
+  renderMessage: function(message) {
+    $("#chats").append(
+      `<p><b>${message.username}</b> ${message.text} ${message.roomname} </p>`
+    );
   }
-
 };
