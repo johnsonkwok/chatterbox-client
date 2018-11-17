@@ -6,8 +6,10 @@ var MessagesView = {
   },
 
   render: function () {
-    for (const message of Messages.results) {
-      MessagesView.renderMessage(message);
+    if (Messages.results) {
+      for (const message of Messages.results) {
+        MessagesView.renderMessage(message);
+      }
     }
   },
 
@@ -20,7 +22,7 @@ var MessagesView = {
       let text = '';
     }
     $("#chats").append(
-      `<p><b class='username'>${message.username}</b><br>${text}</p>`
+      `<p><b class='username'>${message.username}</b><br>${text}<br>Room: ${message.roomname}</p>`
     );
     $(".username").on('click', function () {
       Friends.toggleStatus(message.username);

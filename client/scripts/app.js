@@ -27,6 +27,7 @@ var App = {
       for (const message of data.results) {
         roomNames.push(message.roomname);
       }
+      Rooms.roomname = [];
       Rooms.roomname = [...new Set(roomNames)];
       callback();
     });
