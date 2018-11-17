@@ -22,6 +22,8 @@ var MessagesView = {
     $("#chats").append(
       `<p><b class='username'>${message.username}</b><br>${text}</p>`
     );
-    
+    $(".username").on('click', function () {
+      Friends.toggleStatus(message.username);
+    });
   }
 };
