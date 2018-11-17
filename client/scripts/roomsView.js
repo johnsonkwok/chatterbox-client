@@ -5,6 +5,11 @@ var RoomsView = {
 
   initialize: function () {
     setTimeout(this.render, 1000);
+
+    $('#rooms button').on('click', function () {
+      const room = prompt('What is the name of your room?');
+      Rooms.add(room);
+    });
   },
 
   render: function () {
@@ -13,15 +18,10 @@ var RoomsView = {
         RoomsView.renderRoom(room);
       }
     }
-
-    $('#rooms button').on('click', function () {
-      const room = prompt('What is the name of your room?');
-      Rooms.add(room);
-    });
   },
 
   renderRoom: function (room) {
-    RoomsView.$select.append(`<option>${room}</option>`);
+    RoomsView.$select.append(`<option>${room}</option>`); 
   }
   
 

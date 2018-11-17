@@ -15,20 +15,18 @@ var App = {
     App.fetch(App.stopSpinner);
   },
 
-  fetch: function(
-    callback = () => {
-    }
-  ) {
+  fetch: function(callback = () => {}) {
     Parse.readAll(data => {
       // examine the response from the server request:
       console.log(data);
       Messages = data;
-      let roomNames=[];
+      let roomNames = [];
       for (const message of data.results) {
         roomNames.push(message.roomname);
       }
-      Rooms.roomname = [];
-      Rooms.roomname = [...new Set(roomNames)];
+      if (roomNames.length > 0) {
+        Rooms.roomname = [...new Set(roomNames)];
+      }
       callback();
     });
   },

@@ -16,7 +16,6 @@ var FormView = {
     };
     Parse.create(message);
     $('#message').empty();
-    // console.log('click!');
   },
 
   setStatus: function(active) {

@@ -3,6 +3,7 @@ var MessagesView = {
 
   initialize: function () {
     setTimeout(this.render, 1000);
+    // $.get(Parse.server, MessagesView.render);
   },
 
   render: function () {
@@ -21,8 +22,9 @@ var MessagesView = {
     } else {
       let text = '';
     }
+    
     $("#chats").append(
-      `<p><b class='username'>${message.username}</b><br>${text}<br>Room: ${message.roomname}</p>`
+      `<div class="chat"><b class='username'>${message.username}</b><br>${text}<br>Room: ${message.roomname}</div>`
     );
     $(".username").on('click', function () {
       Friends.toggleStatus(message.username);
