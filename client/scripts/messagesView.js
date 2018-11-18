@@ -24,11 +24,13 @@ var MessagesView = {
     }
     
     $("#chats").append(
-      `<div class="chat"><div id=${message.objectId} class='username'><b>${message.username}</b></div>${text}<br>Room: ${message.roomname}</div>`
+      `<div class="chat"><div id=${message.objectId} class='username'><b>${message.username}</b></div><div>${text}</div></div>`
     );
 
     $(`#${message.objectId}`).on('click', function() {
-      Friends.toggleStatus($(this).text());
+      const username = $(this).text();
+      Friends.toggleStatus(username);
+      MessageView.hilightFriendsText(username);
     });
   }
 };
