@@ -3,7 +3,6 @@ var MessagesView = {
 
   initialize: function () {
     setTimeout(this.render, 1000);
-    // $.get(Parse.server, MessagesView.render);
   },
 
   render: function () {

@@ -16,6 +16,8 @@ body {
 }
 
 #main h1 {
+    font-family: 'VT323', monospace;
+    color: rgba(7, 78, 230, 0.968);
     margin-top: 0;
     font-size: 35px;
     margin-bottom: 5px;
